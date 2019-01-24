@@ -1,5 +1,5 @@
 ﻿using CieDigitalAssessment.DAL;
-using CieDigitalAssessment.Models;
+using CieDigitalAssessment.API.Models;
 using EntityFrameworkCoreMock;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CieDigitalAssessment.API
+namespace CieDigitalAssessment.Test
 {
     public class MockRepository<T> : IApplicationRepository<T> where T : class, IEntity
     {

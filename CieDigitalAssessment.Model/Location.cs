@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CieDigitalAssessment.API.Models
 {
-    public partial class Location
+    public partial class Location : IEntity
     {
         public Location()
         {

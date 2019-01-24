@@ -1,4 +1,4 @@
-﻿namespace CieDigitalAssessment.Models
+﻿namespace CieDigitalAssessment.API.Models
 {
     public interface IEntity
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CieDigitalAssessment.API.Models
 {
-    public partial class MovieCopyStatus
+    public partial class MovieCopyStatus : IEntity
     {
         public MovieCopyStatus()
         {

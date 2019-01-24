@@ -39,6 +39,13 @@ namespace CieDigitalAssessment
             // configure DI for application services
             services.AddScoped<IApplicationRepository<Movie>, ApplicationRepository<Movie>>();
             services.AddScoped<IApplicationRepository<User>, ApplicationRepository<User>>();
+            services.AddScoped<IApplicationRepository<Customer>, ApplicationRepository<Customer>>();
+            services.AddScoped<IApplicationRepository<Location>, ApplicationRepository<Location>>();
+            services.AddScoped<IApplicationRepository<MovieCopy>, ApplicationRepository<MovieCopy>>();
+            services.AddScoped<IApplicationRepository<RentalBox>, ApplicationRepository<RentalBox>>();
+            services.AddScoped<IApplicationRepository<Transaction>, ApplicationRepository<Transaction>>();
+            services.AddScoped<IApplicationRepository<TransactionMovieCopy>, ApplicationRepository<TransactionMovieCopy>>();
+
 
             services.AddScoped<IUserService, UserService>();
             

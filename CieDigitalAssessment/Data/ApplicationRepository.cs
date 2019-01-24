@@ -1,5 +1,5 @@
-﻿using CieDigitalAssessment.DAL;
-using CieDigitalAssessment.Models;
+﻿using CieDigitalAssessment.API.Models;
+using CieDigitalAssessment.DAL;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

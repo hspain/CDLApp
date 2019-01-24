@@ -12,9 +12,9 @@ namespace CieDigitalAssessment.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ApiController<Movie>
+    public class TransactionsController : ApiController<Transaction>
     {
-        public MoviesController(IApplicationRepository<Movie> repository) : base(repository)
+        public TransactionsController(IApplicationRepository<Transaction> repository) : base(repository)
         {
 
         }

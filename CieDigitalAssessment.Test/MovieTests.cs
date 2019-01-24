@@ -4,7 +4,7 @@ using Xunit;
 using CieDigitalAssessment.DAL;
 using EntityFrameworkCoreMock;
 using CieDigitalAssessment.API.Models;
-using CieDigitalAssessment.API;
+
 
 namespace CieDigitalAssessment.Test
 {

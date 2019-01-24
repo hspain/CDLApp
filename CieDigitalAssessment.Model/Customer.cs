@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CieDigitalAssessment.API.Models
 {
-    public partial class Customer
+    public partial class Customer : IEntity
     {
         public Customer()
         {

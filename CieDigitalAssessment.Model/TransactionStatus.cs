@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CieDigitalAssessment.API.Models
 {
-    public partial class TransactionStatus
+    public partial class TransactionStatus : IEntity
     {
         public TransactionStatus()
         {
