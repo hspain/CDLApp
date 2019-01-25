@@ -71,6 +71,10 @@ The response will be similar to this:
 
 You can then use the JWT token provided and pass it as an Authentication: Bearer token for subsequently authenticated requests.  All CRUD functions outside of GETs are authenticated.
 
+#### Continuous Integration/Deployment
+
+This app is configured with continuous integration to a staging server on Azure.  Any commits made to this repository will automatically be built using Azure DevOps and deployed to the Azure Web App with pertinent notifications going out to my email.
+
 ### Development Process
 
 #### Modeling
