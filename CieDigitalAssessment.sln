@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CieDigitalAssessment.API", "CieDigitalAssessment\CieDigitalAssessment.API.csproj", "{D522A430-E396-4528-B45A-755860027518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CieDigitalAssessment.API", "CieDigitalAssessment.API\CieDigitalAssessment.API.csproj", "{D522A430-E396-4528-B45A-755860027518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CieDigitalAssessment.Test", "CieDigitalAssessment.Test\CieDigitalAssessment.Test.csproj", "{F6FFCCB4-6861-442D-BDC8-1C784ADB596F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CieDigitalAssessment.Test", "CieDigitalAssessment.Test\CieDigitalAssessment.Test.csproj", "{F6FFCCB4-6861-442D-BDC8-1C784ADB596F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CieDigitalAssessment.Model", "CieDigitalAssessment.Model\CieDigitalAssessment.Model.csproj", "{3752089E-8E01-47ED-AFDE-6B2F2B8157A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CieDigitalAssessment.Model", "CieDigitalAssessment.Model\CieDigitalAssessment.Model.csproj", "{3752089E-8E01-47ED-AFDE-6B2F2B8157A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CieDigitalAssessment.DAL", "CieDigitalAssessment.DAL\CieDigitalAssessment.DAL.csproj", "{F25A3CDD-4F03-4837-9FD0-C873A5C6FED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CieDigitalAssessment.DAL", "CieDigitalAssessment.DAL\CieDigitalAssessment.DAL.csproj", "{F25A3CDD-4F03-4837-9FD0-C873A5C6FED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{793084E9-1726-446F-A236-609061E18226}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

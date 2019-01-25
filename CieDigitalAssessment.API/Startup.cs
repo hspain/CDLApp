@@ -46,9 +46,6 @@ namespace CieDigitalAssessment
             services.AddScoped<IApplicationRepository<Transaction>, ApplicationRepository<Transaction>>();
             services.AddScoped<IApplicationRepository<TransactionMovieCopy>, ApplicationRepository<TransactionMovieCopy>>();
 
-
-            services.AddScoped<IUserService, UserService>();
-            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "CDL API", Version = "v1" });
