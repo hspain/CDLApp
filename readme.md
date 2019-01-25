@@ -110,3 +110,13 @@ Each token expires in 7 days.
 #### Testing
 
 Example integration and unit tests were added to show how to test the code outside of the database/api and also how to test the full client as well.
+
+
+
+### What would be next
+
+- Add caching
+- Add encryption for user passwords
+- More unit tests and integration tests
+- Add IsDeleted fields to all entities for soft deletions
+- Add role based access for members

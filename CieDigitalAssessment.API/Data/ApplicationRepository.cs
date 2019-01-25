@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace CieDigitalAssessment.API
 {
+
+    // This is a generic repository that gets a DbContext injected to manage the database
+    // It is helpful to have this repository pattern to make unit testing easier and to decouple
+    // the data access from the business logic
     public class ApplicationRepository<T> : IApplicationRepository<T> where T : class, IEntity
     {
         private DbContext _context;

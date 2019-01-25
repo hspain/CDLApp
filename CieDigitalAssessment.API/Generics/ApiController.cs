@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 
 namespace CieDigitalAssessment.DAL
 {
-    
+    // This controller is a generic WebApi controller that implements all CRUD functions based on
+    // a common entity type
     [Route("api/[controller]")]
     public abstract class ApiController<T> : Controller where T : class, IEntity
     {
+
+        // For use with response objects on create events
         protected string createdAtActionName;
 
         private IApplicationRepository<T> _repository;
 
+        // DI to inject the proper repository based on type
         public ApiController(IApplicationRepository<T> repository)
         {
             _repository = repository;
@@ -29,12 +33,21 @@ namespace CieDigitalAssessment.DAL
         }
 
 
+        /// <summary>
+        /// Gets all entities in the repository
+        /// </summary>
+        /// <returns>An IQueryable collection from the repository</returns>
         [HttpGet]
         public IActionResult Query()
         {
             return Ok(_repository.Get());
         }
 
+        /// <summary>
+        /// Gets an entity based on the id.  The id is passed in the route as per REST standards
+        /// </summary>
+        /// <param name="id">The id of the entity to return</param>
+        /// <returns>The entity matched</returns>
         [HttpGet("{id}")]
         public IActionResult Find(int id)
         {
@@ -45,6 +58,11 @@ namespace CieDigitalAssessment.DAL
             return Ok(record);
         }
 
+        /// <summary>
+        /// Creates a new entity as passed in the body of the request
+        /// </summary>
+        /// <param name="record">A fully formed object for the entity to add</param>
+        /// <returns>An object with the url to the new record and the record itself</returns>
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] T record)
@@ -56,6 +74,12 @@ namespace CieDigitalAssessment.DAL
             return CreatedAtAction(createdAtActionName, new { id = record.Id }, record);
         }
 
+        /// <summary>
+        /// Updates a record based on the id and passed in entity in the body
+        /// </summary>
+        /// <param name="id">The id of the record as part of the route</param>
+        /// <param name="record">The record itself with updated fields passed in the body</param>
+        /// <returns>The updated record</returns>
         [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] T record)
@@ -70,6 +94,11 @@ namespace CieDigitalAssessment.DAL
             return Ok(record);
         }
 
+        /// <summary>
+        /// Deletes an entity based on id
+        /// </summary>
+        /// <param name="id">The id of the entity to be deleted</param>
+        /// <returns>No content</returns>
         [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

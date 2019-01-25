@@ -17,7 +17,7 @@ namespace CieDigitalAssessment.Test
         }
 
         [Fact]
-        public async Task GetUsers()
+        public async Task GetMovies()
         {
             var response = await _fixture.Client.GetAsync("api/movies");
             var responseText = await response.Content.ReadAsStringAsync();

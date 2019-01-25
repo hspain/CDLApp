@@ -8,6 +8,8 @@ using CieDigitalAssessment.API.Models;
 
 namespace CieDigitalAssessment.Test
 {
+
+    // There are just some examples of possible unit tests we can perform with the mock repository and context
     public class MovieTests
     {
 
@@ -15,7 +17,7 @@ namespace CieDigitalAssessment.Test
         DbContextMock<CDLAppContext> _context { get; set; }
         MockRepository<Movie> _movieRepository { get; set; }
 
-
+        // Initialize our starting values and repository
         public MovieTests()
         {
             var initialEntities = new[]
@@ -30,6 +32,10 @@ namespace CieDigitalAssessment.Test
             _movieRepository = new MockRepository<Movie>(_context);
         }
 
+
+        // Arrange
+        // Act
+        // Assert
         [Fact]
         public void MovieGet()
         {
