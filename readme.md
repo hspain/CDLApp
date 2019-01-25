@@ -75,6 +75,9 @@ You can then use the JWT token provided and pass it as an Authentication: Bearer
 
 This app is configured with continuous integration to a staging server on Azure.  Any commits made to this repository will automatically be built using Azure DevOps and deployed to the Azure Web App with pertinent notifications going out to my email.
 
+<img src="https://i.imgur.com/NQhD95w.png" alt="CDL CI" width="300"/>
+
+
 ### Development Process
 
 #### Modeling
@@ -89,7 +92,8 @@ The next step was to create the skeleton of what the solution would look like by
 
 The code for the model (C#) was generated through the built in scaffolding based on an existing database that was created on Azure.  Entity Framework core was leveraged along with EF Migrations.ci
 
-![CDL Directory](https://i.imgur.com/xQT3dLh.png)
+<img src="https://i.imgur.com/xQT3dLh.png" alt="CDL Directory" width="300"/>
+
 
 #### Basic Crud
 
