@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace CieDigitalAssessment.API
 {
+
+    // This is the EF Core generated DbContext from scaffolding basd on the Azure SQL database
     public partial class CDLAppContext : DbContext
     {
         public virtual DbSet<Customer> Customer { get; set; }
@@ -28,7 +30,8 @@ namespace CieDigitalAssessment.API
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            // We configure connection strings here so that we can inject into the application repository
+            // based on where it is being used
             IConfigurationRoot configuration = new ConfigurationBuilder()
                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                .AddJsonFile("appsettings.json")
@@ -39,6 +42,8 @@ namespace CieDigitalAssessment.API
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            // Using Fluent API for constraints and relationships
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();

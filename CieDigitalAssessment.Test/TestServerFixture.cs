@@ -13,6 +13,8 @@ namespace CieDigitalAssessment.Test
         private readonly TestServer _testServer;
         public HttpClient Client { get; }
 
+        // This fixture can be used in unit testing classes to setup a web client
+        // including our custom Startup class we built in the API
         public TestServerFixture()
         {
             var builder = new WebHostBuilder()
@@ -25,6 +27,8 @@ namespace CieDigitalAssessment.Test
 
         }
 
+        // This is needed to get access to the appsettings.json file.  Particularly important
+        // for the connection strings to the database
         private string GetContentRootPath()
         {
             var testProjectPath = PlatformServices.Default.Application.ApplicationBasePath;

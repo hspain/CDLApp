@@ -21,6 +21,9 @@ namespace CieDigitalAssessment.API.Controllers
             _repository = repository;
         }
 
+
+        // This extra method is how we authenticate users and generate JWT tokens for user in 
+        // further authenticated requests
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]User userParam)
@@ -35,6 +38,8 @@ namespace CieDigitalAssessment.API.Controllers
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             var tokenHandler = new JwtSecurityTokenHandler();
+
+            // TODO refactor to get this from appsettings
             var key = Encoding.ASCII.GetBytes("superSuperSecretKey");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -44,6 +49,7 @@ namespace CieDigitalAssessment.API.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             user.Token = tokenHandler.WriteToken(token);
 
+            // null out the password hash so that we don't return to user
             user.PasswordHash = null;
 
             

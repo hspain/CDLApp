@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace CieDigitalAssessment.DAL
 {
+
+    // We have a DbContext here so that we can reference it in the repository interface
     public partial class CDLAppContext : DbContext
     {
         public virtual DbSet<Customer> Customer { get; set; }

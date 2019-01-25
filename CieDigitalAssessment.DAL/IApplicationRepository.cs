@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CieDigitalAssessment.DAL
 {
+
+    // We make the generic repository interface to allow us to implement
+    // a mock interface for testing
     public interface IApplicationRepository<T> : IDisposable
     {
         IQueryable<T> Get();

@@ -46,11 +46,13 @@ namespace CieDigitalAssessment
             services.AddScoped<IApplicationRepository<Transaction>, ApplicationRepository<Transaction>>();
             services.AddScoped<IApplicationRepository<TransactionMovieCopy>, ApplicationRepository<TransactionMovieCopy>>();
 
+            // Add swagger for automated documentation
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "CDL API", Version = "v1" });
             });
 
+            // register the JWT authentication scheme
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -63,7 +65,7 @@ namespace CieDigitalAssessment
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("superSuperSecretKey")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("superSuperSecretKey")), // should come from appsettings.json
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
@@ -87,11 +89,14 @@ namespace CieDigitalAssessment
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CDL API V1");
             });
 
+
+            // Enable cors for cross domain use.  Lock down in production
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
+            // Enable [Authorize] data annotations
             app.UseAuthentication();
 
             app.UseMvc();

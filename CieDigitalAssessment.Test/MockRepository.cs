@@ -12,6 +12,8 @@ namespace CieDigitalAssessment.Test
 {
     public class MockRepository<T> : IApplicationRepository<T> where T : class, IEntity
     {
+        // From a NuGet package EntityFrameworkCoreMock.  This allows us to use a fake context in our
+        // mock repository.  We separate the DB from our tests to allow for more isolated unit tests
         private DbContextMock<CDLAppContext> _context;
 
         public MockRepository(DbContextMock<CDLAppContext> context)
